@@ -7,7 +7,7 @@ const {
 
 const tailOptions = {
   separator: /[\r]{0,1}\n/,
-  fromBeginning: true,
+  fromBeginning: false,
   fsWatchOptions: {},
   follow: true,
   logger: console,
@@ -61,7 +61,7 @@ const watchFile = (file) => {
 
     entries.clear();
     logQueue = [];
-  }, 5000);
+  }, process.env.PERIOD);
 };
 
 module.exports = {
