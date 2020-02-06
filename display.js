@@ -3,6 +3,10 @@ const {
   parsing,
 } = require('./utils');
 
+/**
+ * Displays the details of an entry.
+ * @param {} entry entry
+ */
 const displayEntry = (entry) => {
   logger.info(`[${entry.section}]`);
   logger.info(`AMOUNT OF REQUESTS: ${entry.nbRequests}`);
@@ -12,6 +16,10 @@ const displayEntry = (entry) => {
   logger.info('\n');
 };
 
+/**
+ * Display all the values of logQueue. The display is from first to last.
+ * @param {Array} logQueue Logs
+ */
 const displayLogs = (logQueue) => {
   while (logQueue.length > 0) {
     const log = logQueue.shift();
@@ -19,6 +27,12 @@ const displayLogs = (logQueue) => {
   }
 };
 
+/**
+ * Displays details about the last PERIOD.
+ * - All the entries (with their details)
+ * - Global statistics (Total amount of requests, most viewed sections, etc.. )
+ * @param {*} mEntries A map of entries
+ */
 const displayStats = (mEntries) => {
   if (mEntries.size) {
     let arrEntries = [];

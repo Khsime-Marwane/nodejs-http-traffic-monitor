@@ -5,20 +5,28 @@ const {
   parsing,
 } = require('./utils');
 
+// Options for Tail.
 const tailOptions = {
-  separator: /[\r]{0,1}\n/,
-  fromBeginning: false,
+  separator: /[\r]{0,1}\n/, // to handle linux/ mac(9 +) / windows
+  fromBeginning: process.env.READ_FILE_FROM_BEGINNING,
   fsWatchOptions: {},
   follow: true,
   logger: console,
-  flushAtEOF: true,
+  flushAtEOF: true, // Needed with tail to read all new entries even if there is no \n.
 };
 
+// entries (sections)
 const entries = new Map();
+// Logs
 let logQueue = [];
+// We use tail to read new lines written.
 let tail;
 
-const watchFile = (file) => {
+/**
+ * Read a file and display every `PERIOD` milliseconds the new entries.
+ * @param {*} file path of the file to read.
+ */
+const watchFile = (file, programOptions) => {
   try {
     tail = new Tail(file, tailOptions);
   } catch (reason) {
@@ -26,10 +34,13 @@ const watchFile = (file) => {
     return;
   }
 
+  // On new line
   tail.on('line', (data) => {
+    // Parse the request.
     const logParsed = parsing.parseHTTPRequest(data);
+    // If the log matches the w3 format.
     if (logParsed) {
-      const section = parsing.extractSectionFromResource(logParsed.resource);
+      const section = parsing.getSectionFromResource(logParsed.resource);
       const doesRequestFailed = parsing.isStatusError(logParsed.status);
       const bytes = parseInt(logParsed.bytes, 10);
 
@@ -51,13 +62,22 @@ const watchFile = (file) => {
     }
   });
 
+  /**
+   * When an error occurs.
+   */
   tail.on('error', (reason) => {
     logger.error(reason);
   });
 
+  /**
+   * Set the interval of display.
+   */
   setInterval(() => {
     display.displayLogs(logQueue);
-    display.displayStats(entries);
+
+    if (!programOptions.raw) {
+      display.displayStats(entries);
+    }
 
     entries.clear();
     logQueue = [];

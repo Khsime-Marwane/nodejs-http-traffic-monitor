@@ -1,3 +1,6 @@
+/**
+ * Logger
+ */
 const winston = require('winston');
 const moment = require('moment');
 
@@ -10,6 +13,9 @@ const myFormat = printf(({
     case 'info':
       return `${message}`;
 
+    /**
+     * For all other levels, we display the message formated. (Can be useful for tracing).
+     */
     default:
       return `[${moment(timestamp).format('DD/MMM/YYYY HH:mm')}][${level.toUpperCase()}]: ${message};${meta ? JSON.stringify(meta) : ''}`;
   }
