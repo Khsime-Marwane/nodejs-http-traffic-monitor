@@ -52,3 +52,9 @@ In addition to displaying the logs of the file, the program also displays a summ
 ![Alt text](./img/output.png) "Output example")
 
 The period during which the program reads the log file can be modified in the `.env` file at the root of the project (`PERIOD` variable).
+
+Finally, if you want to see only the logs lines without the statistics, you can use the `-r` or `--raw` flag.
+
+```
+npm run start --raw
+```
