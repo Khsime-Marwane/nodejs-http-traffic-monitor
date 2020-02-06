@@ -6,7 +6,7 @@
   "author": "Marwane Khsime",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js",
+    "start": "NODE_ENV=production node index.js",
     "lint": "eslint \"**/*.js\" --ignore-pattern node_modules/"
   },
   "dependencies": {

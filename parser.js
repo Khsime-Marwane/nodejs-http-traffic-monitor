@@ -8,7 +8,8 @@ const {
 // Options for Tail.
 const tailOptions = {
   separator: /[\r]{0,1}\n/, // to handle linux/ mac(9 +) / windows
-  fromBeginning: process.env.READ_FILE_FROM_BEGINNING,
+  // eslint-disable-next-line eqeqeq
+  fromBeginning: process.env.READ_FILE_FROM_BEGINNING == 'true', // Need to check for true because dotenv consider the variable as a string
   fsWatchOptions: {},
   follow: true,
   logger: console,
