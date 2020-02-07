@@ -57,4 +57,27 @@
 161.130.55.23 - - [28/Jul/1995:13:23:18 -0400] "GET /videos/KSC-logosmall.gif HTTP/1.0" 200 1204
 161.130.55.23 - - [28/Jul/1995:13:23:18 -0400] "GET /api/KSC-logosmall.gif HTTP/1.0" 200 1204
 161.130.55.23 - - [28/Jul/1995:13:23:18 -0400] "GET /api/KSC-logosmall.gif HTTP/1.0" 200 1204
+127.0.0.1 - james [09/May/2018:16:00:39 +0000] "GET /report HTTP/1.0" 200 1234161.130.55.23 - - [28/Jul/1995:13:23:16 -0400] "GET /shuttle/missions/missions.html HTTP/1.0" 200 8677
+161.130.55.23 - - [28/Jul/1995:13:23:17 -0400] "GET /images/launchmedium.gif HTTP/1.0" 200 11853
+161.130.55.23 - - [28/Jul/1995:13:23:17 -0400] "GET /images/NASA-logosmall.gif HTTP/1.0" 200 786
+161.130.55.23 - - [28/Jul/1995:13:23:18 -0400] "GET /images/KSC-logosmall.gif HTTP/1.0" 200 1204
+128.159.53.131 - - [28/Jul/1995:13:23:18 -0400] "GET /images/ksclogo.gif HTTP/1.0" 200 14298
+182.200.120.1 - - [28/Jul/1995:13:23:20 -0400] "GET /images/ HTTP/1.0" 200 17688131.182.170.137 - - [28/Jul/1995:13:16:16 -0400] "GET /imagexxs/ksclogo-medium.gif HTTP/1.0" 200 5866
+161.130.55.23 - - [28/Jul/1995:13:23:18 -0400] "GET /videos/KSC-logosmall.gif HTTP/1.0" 200 1204
+161.130.55.23 - - [28/Jul/1995:13:23:18 -0400] "GET /api/KSC-logosmall.gif HTTP/1.0" 200 1204
+161.130.55.23 - - [28/Jul/1995:13:23:18 -0400] "GET /api/KSC-logosmall.gif HTTP/1.0" 200 1204
 127.0.0.1 - james [09/May/2018:16:00:39 +0000] "GET /report HTTP/1.0" 200 1234
+bad format bad [format] bad format bad format
+127.0.0.1 - jill [09/May/2018:16:00:41 +0000] "GET /api/user HTTP/1.0" 200 1234
+127.0.0.1 - frank [09/May/2018:16:00:42 +0000] "GET /api/user HTTP/1.0" 404 1234
+127.0.0.1 - mary [09/May/2018:16:00:42 +0000] "GET /api/user HTTP/1.0" 404 1234
+bad format
+109.169.248.247 - - [12/Dec/2015:18:25:11 +0100] "GET /administrator/ HTTP/1.1" 200 4263
+109.169.248.247 - - [12/Dec/2015:18:25:11 +0100] "POST /administrator/index.php HTTP/1.1" 200 4494
+46.72.177.4 - - [12/Dec/2015:18:31:08 +0100] "GET /administrator/ HTTP/1.1" 404 4263
+bad format bad format bad format bad format bad format bad format bad format bad format
+46.72.177.4 - - [12/Dec/2015:18:31:08 +0100] "POST /administrator/index.php HTTP/1.1" 200 4494
+83.167.113.100 - - [12/Dec/2015:18:31:25 +0100] "GET /administrator/ HTTP/1.1" 403 4263
+83.167.113.100 - - [12/Dec/2015:18:31:25 +0100] "POST /administrator/index.php HTTP/1.1" 200 4494
+bad format bad format
+
