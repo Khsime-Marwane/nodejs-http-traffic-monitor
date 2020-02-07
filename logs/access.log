@@ -43,5 +43,4 @@
 161.130.55.23 - - [28/Jul/1995:13:23:18 -0400] "GET /videos/KSC-logosmall.gif HTTP/1.0" 200 1204
 161.130.55.23 - - [28/Jul/1995:13:23:18 -0400] "GET /api/KSC-logosmall.gif HTTP/1.0" 200 1204
 161.130.55.23 - - [28/Jul/1995:13:23:18 -0400] "GET /api/KSC-logosmall.gif HTTP/1.0" 200 1204
-127.0.0.1 - james [09/May/2018:16:00:39 +0000] "GET /report HTTP/1.0" 200 1234
 
