@@ -33,9 +33,16 @@ const logger = winston.createLogger({
     splat(),
     myFormat,
   ),
-  transports: [
-    new winston.transports.Console(),
-  ],
+  transports:
+  process.env.TEST === 'true'
+    // If we are running tests, write all the outputs to a test.log file.
+    ? [
+      new winston.transports.File({ filename: 'output.txt' }),
+    ]
+    // Else, write on the console.
+    : [
+      new winston.transports.Console(),
+    ],
 });
 
 module.exports = logger;

@@ -22,6 +22,8 @@ const entries = new Map();
 let logQueue = [];
 // We use tail to read new lines written.
 let tail;
+// used to store the id of the interval
+let intervalID;
 
 /**
  * Read a file and display every `PERIOD` milliseconds the new entries.
@@ -73,7 +75,7 @@ const watchFile = (file, programOptions) => {
   /**
    * Set the interval of display.
    */
-  setInterval(() => {
+  intervalID = setInterval(() => {
     display.displayLogs(logQueue);
 
     if (!programOptions.raw) {
@@ -85,6 +87,15 @@ const watchFile = (file, programOptions) => {
   }, process.env.PERIOD);
 };
 
+/**
+ * Tell to Tail to stop.
+ */
+const unwatchFile = () => {
+  tail.unwatch();
+  clearInterval(intervalID);
+};
+
 module.exports = {
   watchFile,
+  unwatchFile,
 };

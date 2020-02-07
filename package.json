@@ -7,11 +7,13 @@
   "license": "MIT",
   "scripts": {
     "start": "NODE_ENV=production node index.js",
-    "lint": "eslint \"**/*.js\" --ignore-pattern node_modules/"
+    "lint": "eslint \"**/*.js\" --ignore-pattern node_modules/",
+    "test": "env TEST=true DEMO=true mocha --timeout 60000"
   },
   "dependencies": {
     "commander": "^4.1.1",
     "dotenv": "^8.2.0",
+    "mocha": "^7.0.1",
     "moment": "^2.24.0",
     "pre-commit": "^1.2.2",
     "tail": "^2.0.3",
