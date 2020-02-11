@@ -15,7 +15,7 @@ programArgs
  * If not, we use either the value of the file given as parameter, either DEFAULT_FILE defined in the .env file
  * which is the default value.
  */
-const file = programArgs.demo || process.env.DEMO_FILE ? process.env.DEMO_FILE : programArgs.file || process.env.DEFAULT_FILE;
+const file = programArgs.demo ? process.env.DEMO_FILE : programArgs.file || process.env.DEFAULT_FILE;
 
 parser.watchFile(file,
   // Options
